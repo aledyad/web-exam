@@ -1,4 +1,4 @@
-﻿namespace WebServer.Models
+﻿namespace WebApiServer.Models
 {
   public class Entity
   {
