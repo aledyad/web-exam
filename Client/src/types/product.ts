@@ -5,4 +5,5 @@ export interface IProduct extends IEntity {
     Price: string,
     PhotoId: string,
     Category: ICategory
+    IsInBasket: boolean
 }

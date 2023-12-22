@@ -10,6 +10,8 @@
 
     public Category Category { get; set; }
 
+    public bool IsInBasket => Basket.Products.Contains(this);
+
     static Product()
     {
       Repository.Add(new Product()
