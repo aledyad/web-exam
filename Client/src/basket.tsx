@@ -10,7 +10,7 @@ export default function Backet(){
         getBasket().then((result) => {
             setBasket(result);
         });
-    }, [basket]);
+    }, []);
 
     return(
         <>

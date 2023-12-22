@@ -10,7 +10,7 @@ export default function NavBar(){
         getCategories().then((result) => {
             setCategories(result);
         });
-    }, [categories]);
+    }, []);
 
     const listItems = categories.map((category) => (
         <li key={category.Id}><a href={`/#/category/${category.Name}`}>{category.Name}</a></li>
