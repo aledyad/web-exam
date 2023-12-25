@@ -38,12 +38,12 @@ export async function getBasket(): Promise<Array<IProduct>> {
   throw new Error(`Error: ${response.statusText}`);
 }
 
-export async function getCategoryProducts(categoryId: string): Promise<Array<IProduct>> {
+export async function getCategoryProducts(categoryName: string): Promise<Array<IProduct>> {
   const options = {
     headers: { 'Content-Type': 'application/json' },
     method: 'GET'
   };
-  const response = await fetch(`api/test/products/${categoryId}`, options);
+  const response = await fetch(`api/test/products/${categoryName}`, options);
   if (response.status === 200) {
     return await response.json();
   }

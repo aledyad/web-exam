@@ -15,7 +15,7 @@ export default function Backet(){
     return(
         <>
             <p>Корзина:</p>
-            {basket.map((product) => (<Product product={product} />))}
+            {basket.map((product) => (<Product key={product.Id} product={product} />))}
         </>
     );    
 }

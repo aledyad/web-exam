@@ -20,11 +20,11 @@ namespace WebApiServer.Controllers
       return Category.Repository;
     }
 
-    [HttpGet("[action]/{categoryId}")]
+    [HttpGet("[action]/{categoryName}")]
     [ActionName("products")]
-    public List<Product> GetProducts(int categoryId)
+    public List<Product> GetProducts(string categoryName)
     {
-      var category = Category.Repository.Single(c => c.Id == categoryId);
+      var category = Category.Repository.Single(c => c.Name.Equals(categoryName, StringComparison.OrdinalIgnoreCase));
       return Product.Repository.Where(p => p.Category == category).ToList();
     }
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { getCategories } from './api';
 import { ICategory } from './types/category';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function NavBar(){
     const [categories, setCategories] = useState<Array<ICategory>>([]);
@@ -13,13 +14,13 @@ export default function NavBar(){
     }, []);
 
     const listItems = categories.map((category) => (
-        <li key={category.Id}><a href={`/#/category/${category.Name}`}>{category.Name}</a></li>
+        <Link key={category.Id} to={`/category/${category.Name}`}>{category.Name}</Link>
     ));
 
     return(
         <>
             <p>Категории:</p>
-            <ul>{listItems}</ul>
+            {listItems}
         </>
     );
 }
