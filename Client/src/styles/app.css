@@ -7,3 +7,13 @@ body {
   margin:0;
   padding:0;
 }
+
+@b layout{
+  display: flex;
+  flex-direction: column;
+
+  @e middle{
+    display: flex;
+    flex-direction: row;    
+  }
+}

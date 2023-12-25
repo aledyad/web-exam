@@ -1,0 +1,7 @@
+@b navbar {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    flex: 0 0 auto;
+}

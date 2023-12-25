@@ -4,6 +4,8 @@ import { getCategoryProducts } from "./api";
 import Product from "./product";
 import React from "react";
 import { useParams } from "react-router-dom";
+import block from 'bem-cn-lite';
+import './category-products.css';
 
 export default function CategoryProducts(){
     const [products, setProducts] = useState<Array<IProduct>>([]);
@@ -17,10 +19,14 @@ export default function CategoryProducts(){
         });
     }, [categoryName]);
 
+    const b = block("category-products");
+
     return(
-        <>
+        <div className={b()}>
             <p>{`Товары категории "${categoryName}":`}</p>
-            {products.map((product) => (<Product key={product.Id} product={product} />))}
-        </>
+            <div className={b("content")}>
+                {products.map((product) => (<Product key={product.Id} product={product} />))}
+            </div>
+        </div>
     );     
 }
