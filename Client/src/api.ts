@@ -49,3 +49,25 @@ export async function getCategoryProducts(categoryName: string): Promise<Array<I
   }
   throw new Error(`Error: ${response.statusText}`);
 }
+
+export async function addToBasket(productId: number): Promise<void> {
+  const options = {
+    method: 'POST'
+  };
+  const response = await fetch(`api/test/basket/${productId}`, options);
+  if (response.status === 200) {
+    return await response.json();
+  }
+  throw new Error(`Error: ${response.statusText}`);
+}
+
+export async function removeFromBasket(productId: number): Promise<void> {
+  const options = {
+    method: 'DELETE'
+  };
+  const response = await fetch(`api/test/basket/${productId}`, options);
+  if (response.status === 200) {
+    return await response.json();
+  }
+  throw new Error(`Error: ${response.statusText}`);
+}
