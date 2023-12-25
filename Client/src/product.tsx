@@ -1,44 +1,47 @@
-import React from "react";
-import { IProduct } from "./types/product";
-import { addToBasket, removeFromBasket } from "./api";
-import ProductButton from "./product-button";
+import React from 'react';
 import block from 'bem-cn-lite';
+
+import { IProduct } from './types/product';
+import { addToBasket, removeFromBasket } from './api';
+import ProductButton from './product-button';
 import './product.css';
 
 const b = block('product');
 
 interface IProductProps {
-    product: IProduct
+  product: IProduct;
 }
 
-export default function Product(props: IProductProps){
-    const product = props.product;
-    const [isInBasket, SetIsInBasket] = React.useState(product.IsInBasket);
+export default function Product(props: IProductProps) {
+  const product = props.product;
+  const [ isInBasket, SetIsInBasket ] = React.useState(product.IsInBasket);
 
-    const buttonCaption = isInBasket ? "Удалить из корзины" : "Добавить в корзину";
-    const buttonAction = () => {
-        if (isInBasket) {
-            removeFromBasket(product.Id)
-        }
-        else {
-            addToBasket(product.Id)
-        }
-        SetIsInBasket(!isInBasket);
+  const buttonCaption = isInBasket ? 'Удалить из корзины' : 'Добавить в корзину';
+  const buttonAction = () => {
+    if (isInBasket) {
+      removeFromBasket(product.Id);
+    }
+    else {
+      addToBasket(product.Id);
     }
 
-    return(
-        <div className={b()}>
-            <div className={b("image-container", { "width": true, "height": true })}>
-                <img className={b("image", { "maxwidth": true, "maxheight": true })} src={`/images/${product.PhotoId}`} alt={product.Name} />
-            </div>
-            <div className={b("description")}>
-                <div>{product.Name}</div>
-                <div>{`Категория: ${product.Category.Name}`}</div>
-                <div>{`Цена: ${product.Price}`}</div>
-            </div>
-            <ProductButton
-                caption={buttonCaption}
-                handleClick={buttonAction} />
-        </div>
-    )
+    SetIsInBasket(!isInBasket);
+  };
+
+  return (
+    <div className={b()}>
+      <div className={b('image-container')}>
+        <img className={b('image')} src={`/images/${product.PhotoId}`} alt={product.Name} />
+      </div>
+      <div className={b('description')}>
+        <div>{product.Name}</div>
+        <div>{`Категория: ${product.Category.Name}`}</div>
+        <div>{`Цена: ${product.Price}`}</div>
+      </div>
+      <ProductButton
+        caption={buttonCaption}
+        handleClick={buttonAction}
+      />
+    </div>
+  );
 }

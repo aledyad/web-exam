@@ -38,7 +38,7 @@ export async function getBasket(): Promise<Array<IProduct>> {
   throw new Error(`Error: ${response.statusText}`);
 }
 
-export async function getCategoryProducts(categoryName: string): Promise<Array<IProduct>> {
+export async function getCategoryProducts(categoryName: string | undefined): Promise<Array<IProduct>> {
   const options = {
     headers: { 'Content-Type': 'application/json' },
     method: 'GET'

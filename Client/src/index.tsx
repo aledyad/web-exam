@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+import { HashRouter, Route, Routes } from 'react-router-dom';
+
+import block from 'bem-cn-lite';
+
 import NavBar from './navbar';
 import Basket from './basket';
-import { HashRouter, Route, Routes } from 'react-router-dom';
 import CategoryProducts from './category-products';
 import Header from './header';
-import block from 'bem-cn-lite';
 import './styles/app.css';
 
 const b = block('layout');
@@ -18,7 +21,7 @@ root.render(
     <HashRouter>
       <div className={b()}>
         <Header />
-        <div className={b("middle")}>
+        <div className={b('middle')}>
           <NavBar />
           <Routes>
             <Route path="/" element={<></>} />
@@ -27,6 +30,6 @@ root.render(
           </Routes>
         </div>
       </div>
-    </HashRouter>    
+    </HashRouter>
   </React.StrictMode>
 );

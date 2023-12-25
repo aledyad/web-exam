@@ -1,12 +1,12 @@
 import React from 'react';
 
 interface IProductButtonProps {
-    caption: string, 
-    handleClick: () => void
+  caption: string;
+  handleClick: () => void;
 }
 
-export default function ProductButton(props: IProductButtonProps){
-    return(
-        <button onClick={props.handleClick}>{props.caption}</button>
-    )
+export default function ProductButton(props: IProductButtonProps) {
+  return (
+    <button onClick={props.handleClick}>{props.caption}</button>
+  );
 }
