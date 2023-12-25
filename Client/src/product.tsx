@@ -31,9 +31,11 @@ export default function Product(props: IProductProps){
             <div className={b("image-container", { "width": true, "height": true })}>
                 <img className={b("image", { "maxwidth": true, "maxheight": true })} src={`/images/${product.PhotoId}`} alt={product.Name} />
             </div>
-            <p>product.Name</p>
-            <p>{`Категория: ${product.Category.Name}`}</p>
-            <p>{`Цена: ${product.Price}`}</p>
+            <div className={b("description")}>
+                <div>{product.Name}</div>
+                <div>{`Категория: ${product.Category.Name}`}</div>
+                <div>{`Цена: ${product.Price}`}</div>
+            </div>
             <ProductButton
                 caption={buttonCaption}
                 handleClick={buttonAction} />

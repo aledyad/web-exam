@@ -1,7 +1,6 @@
 @b product {
     display: flex;
     flex-direction: column;
-    padding: 1em;
 
     @e image-container {
         width: 200px;
@@ -11,5 +10,10 @@
     @e image {
         max-width: 200px;
         max-height: 200px;
+    }
+
+    @e description {
+        display: flex;
+        flex-direction: column;
     }
 }
