@@ -1,6 +1,7 @@
 import React from "react";
 import { IProduct } from "./types/product";
 import { addToBasket, removeFromBasket } from "./api";
+import ProductButton from "./product-button";
 
 interface IProductProps {
     product: IProduct
@@ -27,7 +28,9 @@ export default function Product(props: IProductProps){
             <p>product.Name</p>
             <p>{`Категория: ${product.Category.Name}`}</p>
             <p>{`Цена: ${product.Price}`}</p>
-            <button onClick={buttonAction}>{buttonCaption}</button>
+            <ProductButton
+                caption={buttonCaption}
+                handleClick={buttonAction} />
         </>
     )
 }
