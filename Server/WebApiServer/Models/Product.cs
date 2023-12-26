@@ -1,17 +1,38 @@
 ﻿namespace WebApiServer.Models
 {
+  /// <summary>
+  /// Товар.
+  /// </summary>
   public class Product : Entity
   {
+    /// <summary>
+    /// Хранилище всех товаров.
+    /// </summary>
     public static List<Product> Repository { get; } = new();
 
+    /// <summary>
+    /// Цена.
+    /// </summary>
     public int Price { get; set; }
 
+    /// <summary>
+    /// Ид фотографии.
+    /// </summary>
     public string PhotoId { get; set; }
 
+    /// <summary>
+    /// Категория.
+    /// </summary>
     public Category Category { get; set; }
 
+    /// <summary>
+    /// Признак того, что товар находится в корзине.
+    /// </summary>
     public bool IsInBasket => Basket.Products.Contains(this);
 
+    /// <summary>
+    /// Статический конструктор.
+    /// </summary>
     static Product()
     {
       Repository.Add(new Product()

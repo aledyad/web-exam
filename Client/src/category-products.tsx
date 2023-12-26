@@ -7,6 +7,7 @@ import { getCategoryProducts } from './api';
 import Product from './product';
 import './category-products.css';
 
+/** Категории товаров. */
 export default function CategoryProducts() {
   const [ products, setProducts ] = useState<Array<IProduct>>([]);
 

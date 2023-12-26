@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import block from 'bem-cn-lite';
 import './header.css';
 
+/** Заголовок сайта. */
 export default function Header() {
   return (
     <div className={block('header')()}>

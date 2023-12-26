@@ -8,6 +8,7 @@ import Product from './product';
 
 import './basket.css';
 
+/** Корзина. */
 export default function Backet() {
   const [ basket, setBasket ] = useState<Array<IProduct>>([]);
 

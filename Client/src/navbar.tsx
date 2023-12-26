@@ -9,6 +9,7 @@ import { getCategories } from './api';
 import { ICategory } from './types/category';
 import './navbar.css';
 
+/** Панель навигации. */
 export default function NavBar() {
   const [ categories, setCategories ] = useState<Array<ICategory>>([]);
 

@@ -8,10 +8,16 @@ import './product.css';
 
 const b = block('product');
 
+/** Параметры товара. */
 interface IProductProps {
+  /** Продукт. */
   product: IProduct;
 }
 
+/**
+ * Товар.
+ * @param props Параметры.
+ */
 export default function Product(props: IProductProps) {
   const product = props.product;
   const [ isInBasket, SetIsInBasket ] = React.useState(product.IsInBasket);
