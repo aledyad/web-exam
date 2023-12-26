@@ -7,12 +7,6 @@ namespace WebApiServer.Controllers
   [ApiController]
   public class TestController : ControllerBase
   {
-    [HttpGet]
-    public Entity Get()
-    {
-      return new Entity() { Id = 1, Name = "TestName" };
-    }
-
     [HttpGet("[action]")]
     [ActionName("categories")]
     public List<Category> GetCategories()
