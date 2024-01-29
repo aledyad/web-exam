@@ -1,9 +1,9 @@
 import React from 'react';
 import block from 'bem-cn-lite';
 
-import { IProduct } from './types/product';
-import { addToBasket, removeFromBasket } from './api';
-import ProductButton from './product-button';
+import { IProduct } from '../../types/product';
+import { addToBasket, removeFromBasket } from '../../api';
+
 import './product.css';
 
 const b = block('product');
@@ -44,10 +44,7 @@ export default function Product(props: IProductProps) {
         <div>{`Категория: ${product.Category.Name}`}</div>
         <div>{`Цена: ${product.Price}`}</div>
       </div>
-      <ProductButton
-        caption={buttonCaption}
-        handleClick={buttonAction}
-      />
+      <button className={b('button')} onClick={buttonAction}>{buttonCaption}</button>
     </div>
   );
 }

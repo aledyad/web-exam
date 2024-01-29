@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
 import block from 'bem-cn-lite';
 
-import { getBasket } from './api';
-import { IProduct } from './types/product';
-import Product from './product';
+import { getBasket } from '../../api';
+import { IProduct } from '../../types/product';
+
+import Product from '../product/product';
 
 import './basket.css';
 
