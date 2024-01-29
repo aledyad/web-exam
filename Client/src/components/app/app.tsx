@@ -8,7 +8,7 @@ import CategoryProducts from '../category-products/category-products';
 import Header from '../header/header';
 import './app.css';
 
-const b = block('layout');
+const b = block('app');
 
 export default function App() {
   return (
