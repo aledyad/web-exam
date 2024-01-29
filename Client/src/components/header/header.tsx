@@ -13,10 +13,10 @@ const b = block('header');
 export default function Header({ className }: IProps) {
   return (
     <div className={b(null, className)}>
-      <a href='/'>
+      <Link to='/'>
         <img src='/images/favicon.ico' alt='Best shop ever' />
-      </a>
-      <Link to='basket'>Корзина</Link>
+      </Link>
+      <Link to='/basket'>Корзина</Link>
     </div>
   );
 }
