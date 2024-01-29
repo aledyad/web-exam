@@ -15,13 +15,15 @@ export default function App() {
     <HashRouter>
       <div className={b()}>
         <Header className={b('header')} />
-        <NavBar className={b('navbar')} />
-        <div className={b('content')}>
-          <Routes>
-            <Route path="/" element={<></>} />
-            <Route path="/basket" element={<Basket />} />
-            <Route path="/category/:name" element={<CategoryProducts />} />
-          </Routes>
+        <div className={b('slot')} >
+          <NavBar className={b('navbar')} />
+          <div className={b('content')}>
+            <Routes>
+              <Route path="/" element={<></>} />
+              <Route path="/basket" element={<Basket />} />
+              <Route path="/category/:name" element={<CategoryProducts />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </HashRouter>

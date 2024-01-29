@@ -1,24 +1,24 @@
 @b app {
-  height: 100%;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  flex-direction: column;
 
   @e header {
+    flex: 0 0;
     border-bottom: 1px solid grey;
+  }
+
+  @e slot {
     flex: 1 1 100%;
-    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
   }
 
   @e navbar {
-    border-right: 1px solid grey;
-    height: 100%;
     flex: 0 0 200px;
+    border-right: 1px solid grey;
   }
 
   @e content {
-    height: 100%;
-    display: flex;
     flex: 1 1;
   }
 }
