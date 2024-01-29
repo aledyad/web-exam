@@ -6,8 +6,14 @@ import { getCategories } from '../../api';
 import { ICategory } from '../../types/category';
 import './navbar.css';
 
+interface IProps {
+  className?: string;
+}
+
+const b = block('navbar');
+
 /** Панель навигации. */
-export default function NavBar() {
+export default function NavBar({ className }: IProps) {
   const [ categories, setCategories ] = useState<Array<ICategory>>([]);
 
   useEffect(() => {
@@ -24,7 +30,7 @@ export default function NavBar() {
   ));
 
   return (
-    <div className={block('navbar')()}>
+    <div className={b(null, className)}>
       <p>Категории:</p>
       {listItems}
     </div>

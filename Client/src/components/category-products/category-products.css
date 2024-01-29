@@ -1,9 +1,7 @@
 @b category-products {
     padding: 1em;
-    border: 1px solid;    
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 
     @e content {
         display: flex;

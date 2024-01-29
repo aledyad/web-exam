@@ -14,9 +14,9 @@ export default function App() {
   return (
     <HashRouter>
       <div className={b()}>
-        <Header />
-        <div className={b('middle')}>
-          <NavBar />
+        <Header className={b('header')} />
+        <NavBar className={b('navbar')} />
+        <div className={b('content')}>
           <Routes>
             <Route path="/" element={<></>} />
             <Route path="/basket" element={<Basket />} />
