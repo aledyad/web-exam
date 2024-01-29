@@ -12,20 +12,23 @@ const b = block('product');
 interface IProductProps {
   /** Продукт. */
   product: IProduct;
+  /** Обработчик события удаления товара из корзины. */
+  removeFromBasketHandler?: (productId: number) => void;
 }
 
 /**
  * Товар.
  * @param props Параметры.
  */
-export default function Product(props: IProductProps) {
-  const product = props.product;
+export default function Product({ product, removeFromBasketHandler }: IProductProps) {
   const [ isInBasket, SetIsInBasket ] = React.useState(product.IsInBasket);
 
   const buttonCaption = isInBasket ? 'Удалить из корзины' : 'Добавить в корзину';
   const buttonAction = () => {
     if (isInBasket) {
       removeFromBasket(product.Id);
+      if (removeFromBasketHandler !== undefined)
+        removeFromBasketHandler(product.Id);
     }
     else {
       addToBasket(product.Id);

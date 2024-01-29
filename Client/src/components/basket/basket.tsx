@@ -3,10 +3,10 @@ import block from 'bem-cn-lite';
 
 import { getBasket } from '../../api';
 import { IProduct } from '../../types/product';
-
 import Product from '../product/product';
-
 import './basket.css';
+
+const b = block('basket');
 
 /** Корзина. */
 export default function Backet() {
@@ -21,13 +21,15 @@ export default function Backet() {
     fetchData();
   }, []);
 
-  const b = block('basket');
+  const removeFromBasketHandler = (productId: number) => {
+    setBasket(basket.filter(p => p.Id !== productId));
+  };
 
   return (
     <div className={b()}>
       <p>Корзина:</p>
       <div className={b('content')}>
-        {basket.map((product) => (<Product key={product.Id} product={product} />))}
+        {basket.map((product) => (<Product key={product.Id} product={product} removeFromBasketHandler={removeFromBasketHandler} />))}
       </div>
     </div>
   );
